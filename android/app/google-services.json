@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "397154913962",
+    "project_id": "f-15-980c1",
+    "storage_bucket": "f-15-980c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397154913962:android:c0a93c8978350d67cacad3",
+        "android_client_info": {
+          "package_name": "com.f15_bootcamp_project.f15_bootcamp_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397154913962-h5rgoh65d5qm9k7ctqbbr31groc7m5ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1I_cHncyZygG3QOanvIoXK1OQLLHq9tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397154913962-h5rgoh65d5qm9k7ctqbbr31groc7m5ml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
