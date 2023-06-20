@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
@@ -18,3 +19,13 @@ const Color kGreyThemeClr = Colors.grey;
 //GÜNCEL RENK KODLARI EKLENECEK !!!!
 
 
+=======
+import 'package:flutter/material.dart';
+
+const kBackgroundColor = Color(0xfff0f0f0);
+const kDarkColor = Color(0xff2c2c2c);
+const kPurpleColor = Color(0xFF6b52f4);
+const kAppThemeClr = Color(0xFF253F64);
+const kLightThemeClr = Color(0xFF4C8EA9);
+const kRedDarkThemeClr = Color(0xFF42130F);
+>>>>>>> Stashed changes
