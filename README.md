@@ -51,6 +51,27 @@ Konaklama Değerlendirmeleri: Kullanıcılar, daha önce konakladıkları öğre
 ...
 
 # Sprint 1
+- Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+- Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
+- Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 4 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+- Backlog düzeni ve Story seçimleri: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır. Story başına çıkan tahmin puanı, toplam puanın yarısından az tutulmuştur.
+- Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://docs.google.com/document/d/1u2HC_Dpj-1vdcrbBbtsGuJPr3pfslKYQFKPswMqRPsA/edit?usp=sharing)
+- Sprint board update: Sprint board screenshotları:
+
+![Sprint1](https://drive.google.com/uc?export=view&id=1usBH5YEcs5Y9pr1tHi5c7ogRNMMBcttr)
+
+- Ürün Durumu: Ekran görüntüleri:
+  
+![SS1](https://drive.google.com/uc?export=view&id=1AKwJzojBeBunJQu2cuK8rkodR6O4W33n)
+![SS2](https://drive.google.com/uc?export=view&id=1819Uw2Z19aRTGN0Ia_IjphAlfPI83aTp)
+![SS3](https://drive.google.com/uc?export=view&id=1_Yb9i_KBW5HG1_3dj7q_qbGex_C74Jt7)
+![SS4](https://drive.google.com/uc?export=view&id=1XXN6SVlCtlz90b8feHwdQmmTq8O03v3k)
+![SS5](https://drive.google.com/uc?export=view&id=1Fkcz3Da8GQ-MQ4XhPLjphDMldXtNY5ui)
+
+- Sprint Review: Alınan kararlar: Mimari oluşturuldu, Splash sayfası, Giriş sayfası, Mesajlaşma sayfası, Mesajlar sayfası, drawer componenti oluşturuldu ve eksiklikler değerlendirilmiştir. Sprint Review katılımcıları: Ceylin Çaltepe, Muhammed Ali Algın, Esra Ermiş, Emrecan Er, Burak Özer.
+- Sprint Retrospective:
+  - Takım içerisinde renk sabitlerinin yazımınında değişiklik karar alınmıştır.
+  - Github kullanılmasında kurallar belirlenmiştir.
 
 # Sprint 2
 
