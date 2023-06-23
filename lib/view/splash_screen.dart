@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'onboarding_page/onboarding_page.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -14,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const SplashScreen()),
+        MaterialPageRoute(builder: (context) => const OnboardingPage()),
       ); //Tanıtım Ekranı geldiğinde düzeltilecek
     });
   }
