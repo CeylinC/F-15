@@ -74,5 +74,24 @@ Konaklama Değerlendirmeleri: Kullanıcılar, daha önce konakladıkları öğre
   - Github kullanılmasında kurallar belirlenmiştir.
 
 # Sprint 2
+- Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+- Sprint içinde tamamlanması tahmin edilen puan: 170 Puan
+- Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ikinci sprint'in en azından 170 ile başlaması gerektiğine karar verildi.
+- Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 2 Daily Scrum Chats](https://docs.google.com/document/d/13itiubY7r_SzeLQAMGxvPf9bSdks461xykN2Wy1xzsE/edit?usp=sharing)
+- Sprint board update: Sprint board screenshotları:
+
+![Sprint2](https://drive.google.com/uc?export=view&id=1wx_SrJfqOyP6m6Wu53OhfGEGykot8DgV)
+
+- Ürün Durumu: Ekran görüntüleri:
+  
+![SS1](https://drive.google.com/uc?export=view&id=1JKh1Xlgk9FWJEGDL9sXF8h1nF0nHYB2q)
+![SS2](https://drive.google.com/uc?export=view&id=1Xgm6JffwLSNQS3ZFHge00akh4uJ_POIK)
+![SS3](https://drive.google.com/uc?export=view&id=1iaq2-cybR1LAQk8KmuxKj5lN-j5vPSfK)
+![SS4](https://drive.google.com/uc?export=view&id=1IxqXLcQ_0pmcUBmBpboWUvIT3BW3YUWT)
+![SS5](https://drive.google.com/uc?export=view&id=196clRKIS28_wHGkuQkuAb1-umbMmrzOy)
+
+- Sprint Review: Alınan kararlar: Giriş sayfası, ürün tanıtıtm sayfası, profil sayfası ve anasayfa tasarımları incelendi eksiklikler söylendi. Sprint Review katılımcıları: Ceylin Çaltepe, Muhammed Ali Algın, Esra Ermiş, Emrecan Er, Burak Özer.
+- Sprint Retrospective:
+  - Takımın son sprint için daha çok yoğunlaşılmasına karar verilmiştir.
 
 # Sprint 3
