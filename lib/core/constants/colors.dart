@@ -17,5 +17,8 @@ const kPurpleColor = Color(0xFF6b52f4);
 const kAppThemeClr = Color(0xFF253F64);
 const kLightThemeClr = Color(0xFF4C8EA9);
 const kRedDarkThemeClr = Color(0xFF42130F);
+const k2purplethemeclr = Color(0xFF6F35A5);
+const klightpurplethemeclr = Color(0xFFF1E6FF);
+
 
 //GÜNCEL RENK KODLARI EKLENECEK !!!!
