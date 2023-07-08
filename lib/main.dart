@@ -1,22 +1,22 @@
-import 'package:f15_bootcamp_project/view/splash_screen.dart';
-import 'package:flutter/material.dart';
 
+import 'package:f15_bootcamp_project/view/first_screen/first_screen.dart';
+import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'spot',
       debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: Colors.white
       ),
-      home: const SplashScreen(),
+      home: first_screen()
     );
   }
 }
