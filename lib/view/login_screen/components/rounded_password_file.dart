@@ -3,10 +3,11 @@ import 'package:f15_bootcamp_project/view/login_screen/components/text_field_con
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 class RoundedPasswordField extends StatelessWidget {
+  final TextEditingController controller;
   final ValueChanged <String> onChanged;
   const RoundedPasswordField({
     Key? key, 
-    required this.onChanged,
+    required this.onChanged, required this.controller,
   }) : super(key: key);
 
   @override
@@ -14,6 +15,7 @@ class RoundedPasswordField extends StatelessWidget {
     return TextFieldContainer(
       child: TextField(
         obscureText:true ,
+        controller: controller,
         onChanged: onChanged,
         decoration: InputDecoration(
         hintText: "Şifre",
