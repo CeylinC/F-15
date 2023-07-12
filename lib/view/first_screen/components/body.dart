@@ -3,6 +3,7 @@ import 'package:f15_bootcamp_project/view/first_screen/components/background.dar
 import 'package:f15_bootcamp_project/view/first_screen/roundedbutton.dart';
 import 'package:flutter/material.dart';
 
+import '../../denemee_ekranı.dart';
 import '../../login_screen/login_page.dart';
 import '../../register_screen/register.dart';
 
@@ -59,7 +60,12 @@ class Body extends StatelessWidget {
             ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {Navigator.push(
+              context, MaterialPageRoute(
+                    builder: (context){
+                      return denemeekrani();},
+              ),
+              );},
               child: Text("Devam Et",style: TextStyle(color: k2purplethemeclr,
               fontWeight: FontWeight.bold,)
               ,),
