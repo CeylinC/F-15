@@ -55,7 +55,7 @@ TextEditingController _passwordTextcontroller = TextEditingController();
               ),
               );
             }).onError((error, stackTrace) { print("error ${error.toString()}");}
-              );;},
+              );},
             color: k2purplethemeclr, 
             textColor: Colors.white),
             SizedBox(height: size.height*0.03,),

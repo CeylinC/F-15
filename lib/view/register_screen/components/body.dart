@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:f15_bootcamp_project/core/constants/colors.dart';
 import 'package:f15_bootcamp_project/view/first_screen/first_screen.dart';
 import 'package:f15_bootcamp_project/view/first_screen/roundedbutton.dart';
@@ -69,6 +70,18 @@ class _BodyState extends State<Body> {
                       return denemeekrani();},
               ),),).onError((error, stackTrace) => print("error ${error.toString()}"),
               );
+              FirebaseFirestore.instance.collection("person").doc().set({
+                "name": _nameTextcontroller.text,
+                "lastname" : _lastnameTextcontroller.text,
+                "mail": _emailTextcontroller.text,
+                "school-city": _school_cityTextcontroller.text,
+                "date": _dateTextcontroller.text,
+
+              }).then((value) => Navigator.push(
+              context, MaterialPageRoute(
+                    builder: (context){
+                      return denemeekrani();},
+              ),),);
               },
             color: k2purplethemeclr, 
             textColor: Colors.white),
