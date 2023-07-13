@@ -38,6 +38,10 @@ dependencies:
   firebase_core: ^2.13.1
   cloud_firestore: ^4.8.0
   firebase_auth: ^4.6.3
+  get: ^4.6.5
+  firebase_storage: ^11.2.4
+  image_picker: ^1.0.1
+  http: ^0.13.6
 
 dev_dependencies:
   flutter_test:
@@ -84,3 +88,6 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/Poppins-Medium.ttf
+    - family: Stabillo
+      fonts:
+        - asset: assets/Stabillo Medium.ttf
