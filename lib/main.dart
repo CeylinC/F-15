@@ -1,5 +1,4 @@
-import 'package:f15_bootcamp_project/view/first_screen/first_screen.dart';
-import 'package:f15_bootcamp_project/view/onboarding_page/onboarding_page.dart';
+import 'package:f15_bootcamp_project/view/profile_page/profile_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,12 +14,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          fontFamily: 'Poppins',
-        ),
-        home: OnboardingPage());
+    return MaterialApp(
+      title: 'spot',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
+      home: ProfileScreen(),
+    );
   }
 }
