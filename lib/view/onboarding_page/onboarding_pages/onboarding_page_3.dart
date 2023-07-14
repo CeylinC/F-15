@@ -1,4 +1,5 @@
 import 'package:f15_bootcamp_project/core/constants/colors.dart';
+import 'package:f15_bootcamp_project/view/first_screen/first_screen.dart';
 import 'package:f15_bootcamp_project/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class OnboardingPageThree extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
-                    return const SplashScreen();
+                    return WelcomePage();
                   },
                   fullscreenDialog: true,
                   settings: const RouteSettings()));
