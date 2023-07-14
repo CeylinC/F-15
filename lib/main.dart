@@ -1,3 +1,4 @@
+import 'package:f15_bootcamp_project/view/profile_page/profile_screen.dart';
 import 'package:f15_bootcamp_project/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const SplashScreen(),
+      home: ProfileScreen(),
     );
   }
 }
