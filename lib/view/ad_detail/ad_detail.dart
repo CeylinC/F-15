@@ -86,7 +86,7 @@ class _DisplayAd extends State<DisplayAd> {
                         style: TextStyle(color: Colors.grey, fontSize: 16),
                       ),
                       SizedBox(
-                        width: 300,
+                        width: 290,
                         child: Text(
                           "İstanbul",
                           textAlign: TextAlign.center,
