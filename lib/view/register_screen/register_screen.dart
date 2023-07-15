@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../y_login_screen/components/custom_text_field.dart';
-import '../y_login_screen/login_screen.dart';
+import '../login_screen/components/custom_text_field.dart';
+import '../login_screen/login_screen.dart';
 
 class RegisterPage extends StatelessWidget {
   AuthController authController = Get.put(AuthController());

@@ -1,11 +1,13 @@
 import 'package:f15_bootcamp_project/controller/auth_controller.dart';
+import 'package:f15_bootcamp_project/view/main_screen/main_screen.dart';
 import 'package:f15_bootcamp_project/view/messaging_page/conversation_screen.dart';
-import 'package:f15_bootcamp_project/view/y_register_screen/register_screen.dart';
+import 'package:f15_bootcamp_project/view/register_screen/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/colors.dart';
+import '../page_view/app.dart';
 import 'components/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -74,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                         .signIn(authController.loginEmail.value,
                             authController.loginPassword.value)
                         .whenComplete(() {
-                      Get.off(ConversationPage());
+                      Get.off(App());
                     });
                   },
                   text: 'Giriş Yap',

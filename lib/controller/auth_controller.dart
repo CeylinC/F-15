@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:f15_bootcamp_project/controller/feed_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class AuthController extends GetxController {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FeedController feedController = Get.put(FeedController());
 
   var selectedImagePath = ''.obs;
   late var pickedFile;
@@ -97,6 +99,7 @@ class AuthController extends GetxController {
           icon: Icon(Icons.close));
     });
     var currentUserUid = user.user!.uid;
+    await feedController.fetchDataFromFirebase();
 
     return user.user;
   }
