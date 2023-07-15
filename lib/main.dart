@@ -1,4 +1,3 @@
-import 'package:f15_bootcamp_project/core/components/ad.dart';
 import 'package:f15_bootcamp_project/view/profile_page/profile_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,11 +22,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: "/",
       title: 'spot',
+      routes: {
+        "/": (context) => ProfileScreen(), //anasayfa hazır olunca oraya yönlendiririz
+        "/Settings": (context) => Settings(),
+        "/FAQ": (context) => FAQ(),
+        "/SignOut": (context) => LoginPage(), //sign in sayfasına yönlendir
+        "/UpdateAccount": (context) => UpdateAccount(),
+        "/NotificationPref": (context) => NotificationPref(),
+        "/Preferences": (context) => Preferences(),
+      },
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: Ad(),
+      home: ProfileScreen(),
     );
   }
 }
