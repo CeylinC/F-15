@@ -136,7 +136,7 @@ class ConversationPage extends StatelessWidget {
               children: [
                 Container(
                   width: 150,
-                  height: 500,
+                  height: 400,
                   alignment: Alignment.centerRight,
                   child: ListView.separated(
                     separatorBuilder: (BuildContext context, int index) =>
@@ -564,7 +564,7 @@ class ConversationPage extends StatelessWidget {
                       children: [
                         const Text(
                           'Kullanıcının yanıt verme olasılığı yüksek.',
-                          style: TextStyle(color: Colors.white54, fontSize: 12),
+                          style: TextStyle(color: Colors.white54, fontSize: 10),
                         )
                       ],
                     ),
