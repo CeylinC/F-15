@@ -40,8 +40,7 @@ class _AppState extends State<App> {
           MainScreen(),
           MessagingPage(),
           IlanVer(),
-          MapSample(),
-          NotificationPage(),
+          NotificationPage()
         ],
       ),
       bottomNavigationBar: Padding(

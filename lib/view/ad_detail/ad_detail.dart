@@ -80,7 +80,7 @@ class _DisplayAd extends State<DisplayAd> {
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column(
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 5),
                   child: Row(
                     children: [
@@ -100,7 +100,7 @@ class _DisplayAd extends State<DisplayAd> {
                     ],
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 5),
                   child: Row(
                     children: [
@@ -120,7 +120,7 @@ class _DisplayAd extends State<DisplayAd> {
                     ],
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
