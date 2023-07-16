@@ -90,8 +90,35 @@ Konaklama Değerlendirmeleri: Kullanıcılar, daha önce konakladıkları öğre
 ![SS4](https://drive.google.com/uc?export=view&id=1IxqXLcQ_0pmcUBmBpboWUvIT3BW3YUWT)
 ![SS5](https://drive.google.com/uc?export=view&id=196clRKIS28_wHGkuQkuAb1-umbMmrzOy)
 
-- Sprint Review: Alınan kararlar: Giriş sayfası, ürün tanıtıtm sayfası, profil sayfası ve anasayfa tasarımları incelendi eksiklikler söylendi. Sprint Review katılımcıları: Ceylin Çaltepe, Muhammed Ali Algın, Esra Ermiş, Emrecan Er, Burak Özer.
+- Sprint Review: Alınan kararlar: Giriş sayfası, ürün tanıtıtm sayfası ve profil sayfası tasarımları incelendi eksiklikler söylendi. Sprint Review katılımcıları: Ceylin Çaltepe, Muhammed Ali Algın, Esra Ermiş, Emrecan Er.
 - Sprint Retrospective:
   - Takımın son sprint için daha çok yoğunlaşılmasına karar verilmiştir.
 
 # Sprint 3
+- Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+- Sprint içinde tamamlanması tahmin edilen puan: 260 Puan
+- Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ikinci sprint'in en azından 170 ile başlaması gerektiğine karar verildi.
+- Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 3 Daily Scrum Chats](https://docs.google.com/document/d/1qxAMlXz-9N0QF3qac_qPCcDCRl2iYPhZ86h4zDbiwco/edit?usp=drive_link)
+- Sprint board update: Sprint board screenshotları:
+
+![Sprint3](https://drive.google.com/uc?export=view&id=1SvU7MioilcZ8q-W7lUIiHk7jz74DQtDR)
+
+- Ürün Durumu: Ekran görüntüleri:
+  
+![SS1](https://github.com/CeylinC/F-15/assets/93523446/b6db22bf-478b-4864-b532-668aabbc78d9)
+![SS2](https://github.com/CeylinC/F-15/assets/93523446/1ee2f098-5163-450d-8c89-cac532aaa116)
+![SS3](https://github.com/CeylinC/F-15/assets/93523446/f2e3fd1e-8969-4d85-846c-4f4f8ac9aeb8)
+![SS4](https://github.com/CeylinC/F-15/assets/93523446/c00db13f-2ac0-4629-8f31-a07ff019c6b4)
+![SS5](https://github.com/CeylinC/F-15/assets/93523446/169bc8df-da42-4aca-b12c-30111d6026e2)
+![SS6](https://github.com/CeylinC/F-15/assets/93523446/189ed392-bc05-4fe5-a3f6-ff050737bd45)
+![SS7](https://github.com/CeylinC/F-15/assets/93523446/51a32645-6825-49d5-a27e-6ce608df87a8)
+![SS8](https://github.com/CeylinC/F-15/assets/93523446/1e40b5f3-b958-4a7c-9878-1149dcae853e)
+![SS9](https://github.com/CeylinC/F-15/assets/93523446/f152ff41-b045-48e8-9671-7863c9e63285)
+![SS10](https://github.com/CeylinC/F-15/assets/93523446/6e934cbb-894e-4107-8cdc-62ce48bfe172)
+![SS11](https://github.com/CeylinC/F-15/assets/93523446/8b56f989-bc5d-4b90-a979-db4d67446d43)
+
+
+
+- Sprint Review: Alınan kararlar: Ekranların tasarımları değerlendirildi. Sprint Review katılımcıları: Ceylin Çaltepe, Muhammed Ali Algın, Esra Ermiş, Emrecan Er.
+- Sprint Retrospective:
+  - Takımın içerisinde zamanlamanın iyi yapılmadığı konuşuldu.
