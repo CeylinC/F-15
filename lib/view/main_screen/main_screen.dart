@@ -270,7 +270,7 @@ class CarouselCard extends StatelessWidget {
   }
 }
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   FeedController feedController = Get.put(FeedController());
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
