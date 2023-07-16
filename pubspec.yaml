@@ -43,6 +43,7 @@ dependencies:
   firebase_storage: ^11.2.4
   image_picker: ^1.0.1
   http: ^0.13.6
+  carousel_slider: ^4.2.1
   font_awesome_flutter: ^10.4.0
   flutter_svg: ^2.0.5
   animated_fab_button_menu: ^0.0.2
@@ -53,7 +54,6 @@ dependencies:
   google_maps_flutter: ^2.3.0
   location: ^5.0.0
   geolocator: ^9.0.2
-
 
 dev_dependencies:
   flutter_test:

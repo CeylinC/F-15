@@ -46,7 +46,7 @@ class FloatingNavigationBar extends StatelessWidget {
 
           DotNavigationBarItem(
             icon: FaIcon(
-              FontAwesomeIcons.gear,
+              FontAwesomeIcons.solidBell,
               size: 20,
             ),
             selectedColor: Colors.black87,

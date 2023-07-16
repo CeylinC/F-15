@@ -1,4 +1,5 @@
 import 'package:f15_bootcamp_project/view/onboarding_page/onboarding_page.dart';
+import 'package:f15_bootcamp_project/view/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: OnboardingPage(),
+      home: SplashScreen(),
     );
   }
 }

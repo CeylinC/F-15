@@ -1,5 +1,8 @@
 import 'package:f15_bootcamp_project/core/constants/colors.dart';
 import 'package:f15_bootcamp_project/view/main_screen/components/drawer_tile.dart';
+import 'package:f15_bootcamp_project/view/main_screen/main_screen.dart';
+import 'package:f15_bootcamp_project/view/settings_screen/settings.dart';
+import 'package:f15_bootcamp_project/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -46,26 +49,17 @@ class MyDrawer extends StatelessWidget {
           DrawerTile(
             text: 'Ana Sayfa',
             icon: FontAwesomeIcons.home,
+            page: MainScreen(),
           ),
           DrawerTile(
             text: 'Takvim',
             icon: FontAwesomeIcons.calendar,
+            page: SplashScreen(), //Ekranı olmadığı için en başa attım
           ),
           DrawerTile(
             text: 'Ayarlar',
             icon: FontAwesomeIcons.gear,
-          ),
-          DrawerTile(
-            text: 'Ana Sayfa',
-            icon: FontAwesomeIcons.home,
-          ),
-          DrawerTile(
-            text: 'Ana Sayfa',
-            icon: FontAwesomeIcons.home,
-          ),
-          DrawerTile(
-            text: 'Ana Sayfa',
-            icon: FontAwesomeIcons.home,
+            page: SettingsPage(),
           ),
         ],
       ),

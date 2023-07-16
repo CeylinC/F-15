@@ -1,37 +1,32 @@
+import 'package:f15_bootcamp_project/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:f15_bootcamp_project/view/settings_screen/components/setting_menu.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class Settings extends StatefulWidget {
+import '../../controller/feed_controller.dart';
+
+class SettingsPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _SettingsState();
 }
 
 class _SettingsState extends State {
+  FeedController feedController = Get.put(FeedController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, "/");
-          },
-          icon: const Icon(Icons.arrow_back_ios_new_outlined,
-              color: Colors.black),
-        ),
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        backgroundColor: kBackgroundGreyThemeClr,
         title: const Text("Ayarlar",
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
                 fontWeight: FontWeight.w800)),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.dark_mode_outlined, color: Colors.black),
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -39,14 +34,12 @@ class _SettingsState extends State {
           child: Column(
             children: [
               Stack(children: [
-                SizedBox(
-                    width: 120,
-                    height: 120,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: const Image(
-                          image: AssetImage("assets/images/foto.png")),
-                    )),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(
+                      Uri.parse(feedController.currentUserProfilePhoto.value)
+                          .toString()),
+                ),
                 Positioned(
                   bottom: 0,
                   right: 0,
@@ -57,19 +50,22 @@ class _SettingsState extends State {
                         borderRadius: BorderRadius.circular(100),
                         color: Color(0xFF6F35A5)),
                     child:
-                    const Icon(Icons.edit, color: Colors.white, size: 22),
+                        const Icon(Icons.edit, color: Colors.white, size: 22),
                   ),
                 )
               ]),
               const SizedBox(height: 10),
-              const Text('John Doe'),
-              const Text('@johndoe'),
+              Text(
+                feedController.currentUserName.value,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              Text("@" + feedController.currentUserName.value),
               const SizedBox(height: 20),
               SizedBox(
                 width: 200,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/UpdateAccount");
+                    //Navigator.pushNamed(context, "/UpdateAccount");
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF6F35A5),
@@ -87,15 +83,15 @@ class _SettingsState extends State {
                   subtitle: "Güvenlik, Gizlilik, Dil",
                   icon: Icons.security,
                   onPress: () {
-                    Navigator.pushNamed(context, "/Preferences");
+                    //Navigator.pushNamed(context, "/Preferences");
                   }),
               SettingsMenuWidget(
                   title: "Bildirim Ayarları",
                   subtitle:
-                  "Mesajlar, Belirlenen Kritlerlere Uygun İlanlar, Favori İlanlara Dair Güncellemeler, Yorumlar",
+                      "Mesajlar, Belirlenen Kritlerlere Uygun İlanlar, Favori İlanlara Dair Güncellemeler, Yorumlar",
                   icon: Icons.notifications_none,
                   onPress: () {
-                    Navigator.pushNamed(context, "/NotificationPref");
+                    //Navigator.pushNamed(context, "/NotificationPref");
                   }),
               SettingsMenuWidget(
                   title: "Hesabı Sil",
