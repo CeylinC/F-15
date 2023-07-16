@@ -97,7 +97,7 @@ Konaklama Değerlendirmeleri: Kullanıcılar, daha önce konakladıkları öğre
 # Sprint 3
 - Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
 - Sprint içinde tamamlanması tahmin edilen puan: 260 Puan
-- Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ikinci sprint'in en azından 170 ile başlaması gerektiğine karar verildi.
+- Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde üçüncü sprint'in en azından 260 ile başlaması gerektiğine karar verildi.
 - Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 3 Daily Scrum Chats](https://docs.google.com/document/d/1qxAMlXz-9N0QF3qac_qPCcDCRl2iYPhZ86h4zDbiwco/edit?usp=drive_link)
 - Sprint board update: Sprint board screenshotları:
 
