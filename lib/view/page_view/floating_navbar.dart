@@ -31,22 +31,29 @@ class FloatingNavigationBar extends StatelessWidget {
             selectedColor: Colors.black87,
           ),
           DotNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.solidMessage,
+              size: 18,
+            ),
+            selectedColor: Colors.black87,
+          ),
+          DotNavigationBarItem(
             icon: Icon(
-              Icons.calendar_month,
+              Icons.add,
             ),
             selectedColor: Colors.black87,
           ),
 
           DotNavigationBarItem(
             icon: Icon(
-              Icons.ads_click_rounded,
+              Icons.map,
             ),
             selectedColor: Colors.black87,
           ),
 
           DotNavigationBarItem(
             icon: FaIcon(
-              FontAwesomeIcons.solidMessage,
+              FontAwesomeIcons.gear,
               size: 20,
             ),
             selectedColor: Colors.black87,
