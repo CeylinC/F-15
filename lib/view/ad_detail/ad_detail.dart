@@ -24,8 +24,11 @@ class _DisplayAd extends State<DisplayAd> {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
+    const double buttonWidth = 275;
+
     return Scaffold(
-      body: Column(children: [
+        body: SingleChildScrollView(
+      child: Column(children: [
         CarouselSlider(
           items: imgList
               .map((item) => Container(
@@ -117,21 +120,55 @@ class _DisplayAd extends State<DisplayAd> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 50, //Buton ile bilgi arasındaki boşluk
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Açıklama",
+                        style: TextStyle(color: Colors.grey, fontSize: 16),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      SizedBox(
+                        width: 500,
+                        child: Text(
+                          "3 oda 1 salon. Kaloriferli ve eşyalı. Eşyalar yeni ve retro temalıdır. Duşakabin bulunur. Çatısı olduğu için ısınma problemi yoktur. Çarşıdadır. Ulaşım problemi yoktur. Dağ manzaralıdır.",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kPurpleColor,
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      "Satıcıyla İletişime Geç",
-                      style: TextStyle(fontSize: 20),
-                    ))
+                SizedBox(
+                  width: buttonWidth,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: kPurpleColor,
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        "Satıcıyla İletişime Geç",
+                        style: TextStyle(fontSize: 20),
+                      )),
+                ),
+                SizedBox(
+                  width: buttonWidth,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.amber,
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        "İlanı Favorile",
+                        style: TextStyle(fontSize: 20),
+                      )),
+                )
               ],
             ))
       ]),
-    );
+    ));
   }
 }
