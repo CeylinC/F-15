@@ -30,11 +30,10 @@ class OnboardingPageThree extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) {
-                    return WelcomePage();
-                  },
-                  fullscreenDialog: true,
-                  settings: const RouteSettings()));
+                builder: (context) {
+                  return WelcomePage();
+                },
+              ));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.amber,
