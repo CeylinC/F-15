@@ -37,8 +37,12 @@ class _AppState extends State<App> {
           MainScreen(),
           MessagingPage(),
           IlanVer(),
+<<<<<<< Updated upstream
           MapSample(),
           MessagingPage(),
+=======
+          NotificationPage(),
+>>>>>>> Stashed changes
         ],
       ),
       bottomNavigationBar: Padding(

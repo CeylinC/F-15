@@ -37,7 +37,7 @@ class Ad extends StatelessWidget {
                   ),
                 ),
               ),
-              const Row(
+              Row(
                 children: [
                   Icon(
                     Icons.location_on,
@@ -49,7 +49,7 @@ class Ad extends StatelessWidget {
                   )
                 ],
               ),
-              const Row(
+              Row(
                 children: [
                   Icon(
                     Icons.star,
