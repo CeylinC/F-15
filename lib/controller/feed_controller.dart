@@ -20,7 +20,7 @@ class FeedController extends GetxController {
 
   var currentUserProfilePhoto = ''.obs;
   var currentUserPhoneNumber = ''.obs;
-  var currentUserUid = _auth.currentUser!.uid.obs;
+  var currentUserUid = _auth.currentUser?.uid.obs;
   var lat = 0.0.obs;
   var longitude = 0.0.obs;
   var selectedLat = 0.0.obs;
@@ -150,7 +150,7 @@ class FeedController extends GetxController {
       'ad': name,
       'profilePhoto': profilePhoto,
       'number': number,
-      'uid': currentUserUid.value,
+      'uid': currentUserUid?.value,
     });
     await _firestore
         .collection("user")
