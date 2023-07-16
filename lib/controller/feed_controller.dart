@@ -1,8 +1,12 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -12,32 +16,50 @@ DocumentReference userDoc = usersCollection.doc(_auth.currentUser?.uid);
 class FeedController extends GetxController {
   var currentUserCity = ''.obs;
   var currentUserName = ''.obs;
+  var currentUserUniversity = ''.obs;
+
   var currentUserProfilePhoto = ''.obs;
   var currentUserPhoneNumber = ''.obs;
   var currentUserUid = _auth.currentUser!.uid.obs;
-  var attendeeCount = 0.obs;
-  var ilanKacKisi = 0.obs;
+  var lat = 0.0.obs;
+  var longitude = 0.0.obs;
+  var selectedLat = 0.0.obs;
+  var selectedLong = 0.0.obs;
+  var ilanBasligi = ''.obs;
+  var ilanAciklama = ''.obs;
+  var ilanSemti = ''.obs;
+  var ilanUcret = 0.obs;
+  var selectedImagePath = ''.obs;
+  late var pickedFile;
+  var getDownloadURL = ''.obs;
 
-  var isEmpty = true.obs;
-  var katilanKisiler = [].obs;
-  var colorList = [].obs;
   var eventCreatorUid = ''.obs;
   List<Map<String, dynamic>> veriListesi = [];
+  Future uploadFile() async {
+    log('uploadfile çalıstı');
+    final path = 'files/posts/${pickedFile.name}';
+    final file = File(pickedFile.path);
+    final ref = FirebaseStorage.instance.ref().child(path);
+    ref.putFile(file);
+    final snapshot = await ref.putFile(file).whenComplete(() {});
+    final urlDownload = await snapshot.ref.getDownloadURL();
+    getDownloadURL.value = urlDownload;
+  }
 
-  Future<void> getAttendeeData() async {
-    CollectionReference collectionRef = FirebaseFirestore.instance
-        .collection('ilanlar')
-        .doc(currentUserCity.value)
-        .collection('TÜM İLANLAR')
-        .doc(eventCreatorUid.value)
-        .collection('Katılımcılar');
-    QuerySnapshot snapshot = await collectionRef.get();
-    List<QueryDocumentSnapshot> documents = snapshot.docs;
-    int docCount = documents.length;
-    attendeeCount.value = docCount;
-    print('Doküman sayısı: $docCount');
+  void getImage(ImageSource imageSource) async {
+    pickedFile = await ImagePicker().pickImage(source: imageSource);
 
-    print('VERİ sayısı: ${attendeeCount.value}');
+    if (pickedFile != null) {
+      selectedImagePath.value = pickedFile.path;
+      uploadFile();
+
+      print("image_path save");
+    } else {
+      Get.snackbar("Hata !", "Lütfen Fotoğraf Seçiniz",
+          backgroundColor: Colors.white,
+          snackPosition: SnackPosition.BOTTOM,
+          colorText: Colors.black);
+    }
   }
 
   fetchDataFromFirebase() async {
@@ -54,6 +76,8 @@ class FeedController extends GetxController {
       currentUserCity.value = veriListesi[0]['city'];
       currentUserPhoneNumber.value = veriListesi[0]['phoneNumber'];
       currentUserProfilePhoto.value = veriListesi[0]['profilePhoto'];
+      currentUserUniversity.value = veriListesi[0]['university'];
+
       inspect(veriListesi);
     }
   }
@@ -94,12 +118,11 @@ class FeedController extends GetxController {
     return ref;
   }
 
-  Stream<QuerySnapshot> getSportPost() {
+  Stream<QuerySnapshot> getAds() {
     var ref = _firestore
-        .collection("ilanlar")
+        .collection('ilanlar')
         .doc(currentUserCity.value)
         .collection('TÜM İLANLAR')
-        .orderBy('date', descending: true)
         .snapshots();
 
     return ref;
@@ -146,15 +169,15 @@ class FeedController extends GetxController {
     });
   }
 
-  Future createSportPost(
-    String place,
-    String baslik,
-    String sport,
-    String profilePhoto,
-    bool top,
-    int kacKisi,
-    String time,
-    String date,
+  Future createAd(
+    String photoUrl,
+    String long,
+    String lat,
+    String ilanBaslik,
+    String creatorProfilePhoto,
+    int para,
+    String ilanDetay,
+    String ilanSemti,
   ) async {
     await _firestore
         .collection("ilanlar")
@@ -162,31 +185,29 @@ class FeedController extends GetxController {
         .collection('TÜM İLANLAR')
         .doc(_auth.currentUser!.uid)
         .set({
-      'baslik': baslik,
-      'place': place,
-      'sport': sport,
-      'profilePhoto': profilePhoto,
-      'topVarMi': top,
-      'kacKisi': kacKisi,
-      'time': time,
-      'date': date,
+      'lat': lat,
+      'long': long,
+      'ilanBaslik': ilanBaslik,
+      'creatorProfilePhoto': creatorProfilePhoto.toString(),
+      'para': para,
+      'ilanDetay': ilanDetay,
+      'ilanSemti': ilanSemti,
+      'photoUrl': photoUrl,
       'createdAt': DateTime.now(),
-      'uid': _auth.currentUser!.uid,
-      'creatorName': currentUserName,
+      'uid': _auth.currentUser!.uid.toString(),
+      'creatorName': currentUserName.value,
     });
     await _firestore
         .collection("user")
         .doc(_auth.currentUser?.uid)
-        .collection('ETKINLIKLER')
+        .collection('ilanları')
         .doc(_auth.currentUser?.uid)
-        .collection('OLUSTURDUGU ETKINLIKLER')
-        .doc(baslik)
+        .collection('Tüm İlanları')
+        .doc(ilanBaslik)
         .set({
-      'creatorProfilePhoto': profilePhoto,
-      'etkinlikAdi': place,
-      'nerede': baslik,
-      'date': date,
-      'time': time,
+      'creatorProfilePhoto': creatorProfilePhoto,
+      'lat': lat,
+      'long': long,
       'uid': _auth.currentUser!.uid,
       'createdAt': DateTime.now(),
     });

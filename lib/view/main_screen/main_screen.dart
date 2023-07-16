@@ -1,7 +1,10 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:f15_bootcamp_project/view/faq_screen/faq.dart';
+import 'package:f15_bootcamp_project/view/feed_screen/feed_screen.dart';
 import 'package:f15_bootcamp_project/view/main_screen/components/takvim_card.dart';
 import 'package:f15_bootcamp_project/view/main_screen/components/text_manager.dart';
+import 'package:f15_bootcamp_project/view/profile_page/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,6 +12,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../controller/feed_controller.dart';
+import '../../core/components/atomic_widgets/card.dart';
 import '../../core/constants/colors.dart';
 import 'components/my_drawer.dart';
 
@@ -79,6 +83,7 @@ class MainScreen extends StatelessWidget {
                     width: Get.width,
                     height: 200,
                     child: ListView(
+                      physics: NeverScrollableScrollPhysics(),
                       children: <Widget>[
                         Container(
                           height: 200,
@@ -105,37 +110,81 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
-            TextManager(text: 'İlanlara Göz at'),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SingleChildScrollView(
-                physics: NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: kDarkColor.withOpacity(0.3),
-                        borderRadius: customRadius(),
-                      ),
-                      child: Column(
-                        children: [],
-                      ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextManager(text: 'İlanlara Göz at'),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(FeedScreen());
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Tamamını Görüntüle',
+                      style: TextStyle(color: kRedColor, fontSize: 10),
                     ),
-                  ],
-                ),
-              ),
+                  ),
+                )
+              ],
             ),
-            TextManager(
-              text: 'Sıkça Sorulan Sorular',
+            StreamBuilder(
+              stream: feedController.getAds(),
+              builder: ((context, snapshot) {
+                return !snapshot.hasData
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : snapshot.data?.size == 0
+                        ? SizedBox(
+                            width: Get.width,
+                            height: 150,
+                            child: Center(
+                              child: Text('Henüz bir etkinliğe katılmadınız! '),
+                            ),
+                          )
+                        : SingleChildScrollView(
+                            physics: NeverScrollableScrollPhysics(),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  width: Get.width,
+                                  height: 270,
+                                  child: ListView.builder(
+                                      physics: BouncingScrollPhysics(),
+                                      itemCount: snapshot.data!.docs.length,
+                                      scrollDirection: Axis.horizontal,
+                                      itemBuilder: (context, index) {
+                                        DocumentSnapshot documentSnapshot =
+                                            snapshot.data!.docs[index];
+
+                                        return IlanCard(
+                                          creatorProfilePhoto: documentSnapshot[
+                                              'creatorProfilePhoto'],
+                                          ilanBaslik:
+                                              documentSnapshot['ilanBaslik'],
+                                          creatorUid: documentSnapshot['uid'],
+                                          location: documentSnapshot[
+                                                  'ilanSemti'] +
+                                              ' /${feedController.currentUserCity.value}',
+                                          photoUrl:
+                                              documentSnapshot['photoUrl'],
+                                          star: '4.4',
+                                        );
+                                      }),
+                                ),
+                              ],
+                            ),
+                          );
+              }),
             ),
+            TextManager(text: 'Sıkça Sorulan Sorular'),
             SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [],
-              ),
-            )
+                child: SizedBox(
+                    width: Get.width, height: Get.height, child: FAQ())),
           ],
         ),
       ),
@@ -183,7 +232,8 @@ class CarouselCard extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 1,
-                      child: Lottie.asset(lottie, width: 150, height: 100),
+                      child: Lottie.asset(lottie,
+                          width: 150, height: 100, repeat: false),
                     ),
                   ],
                 ),
@@ -267,7 +317,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         Obx(() => Padding(
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.to(ProfileScreen(
+                    name: feedController.currentUserName.value,
+                    profilePhoto: feedController.currentUserProfilePhoto.value,
+                    university: feedController.currentUserUniversity.value,
+                  ));
+                },
                 child: CircleAvatar(
                   radius: 18.0,
                   backgroundImage: NetworkImage(
