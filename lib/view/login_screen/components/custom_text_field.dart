@@ -1,3 +1,4 @@
+import 'package:f15_bootcamp_project/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -16,12 +17,12 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
         padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            border: Border.all(color: Colors.purple)),
+            border: Border.all(color: kPurpleColor)),
         child: Form(
           key: formKey,
           child: TextFormField(

@@ -1,13 +1,11 @@
 import 'package:f15_bootcamp_project/view/first_screen/roundedbutton.dart';
-import 'package:f15_bootcamp_project/view/y_login_screen/login_screen.dart';
-import 'package:f15_bootcamp_project/view/y_register_screen/register_screen.dart';
+import 'package:f15_bootcamp_project/view/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/colors.dart';
 import '../denemee_ekranı.dart';
-import '../login_screen/login_page.dart';
-import '../register_screen/register.dart';
+import '../login_screen/login_screen.dart';
 
 class WelcomePage extends StatelessWidget {
   @override

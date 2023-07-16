@@ -1,8 +1,18 @@
 import 'package:f15_bootcamp_project/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
+  String profilePhoto;
+  String university;
+  String name;
+
+  ProfileScreen(
+      {super.key,
+      required this.profilePhoto,
+      required this.university,
+      required this.name});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,14 +68,14 @@ class ProfileScreen extends StatelessWidget {
                           height: MediaQuery.of(context).size.height / 10,
                         ),
                         Text(
-                          'Emrecan Er',
+                          name,
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 17,
                           ),
                         ),
                         Text(
-                          'Gazi Üniversitesi',
+                          university,
                           style: TextStyle(
                             color: Colors.black26,
                             fontSize: 12,
@@ -76,38 +86,6 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black26,
                             fontSize: 12,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Column(
-                                children: [
-                                  Text('22'),
-                                  Text(
-                                    'Takipçi',
-                                    style: TextStyle(
-                                      color: Colors.black45,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text('35'),
-                                  Text(
-                                    'Takip Edilen',
-                                    style: TextStyle(
-                                      color: Colors.black45,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
                           ),
                         ),
                         Padding(
@@ -262,7 +240,32 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        Spacer(),
+                        Row(
+                          children: [
+                            Container(
+                              height: 50,
+                              width: Get.width,
+                              decoration: BoxDecoration(
+                                color: kPurpleColor,
+                                border: Border.all(
+                                  color: kPurpleColor,
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                    child: Text(
+                                  'Mesaj At',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                              ),
+                            )
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -280,9 +283,7 @@ class ProfileScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xff7c94b6),
                     image: DecorationImage(
-                      image: NetworkImage(Uri.parse(
-                              'https://avatars.githubusercontent.com/u/93643219?v=4')
-                          .toString()),
+                      image: NetworkImage(Uri.parse(profilePhoto).toString()),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(360.0)),

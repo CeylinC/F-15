@@ -1,11 +1,14 @@
 import 'package:f15_bootcamp_project/controller/auth_controller.dart';
+import 'package:f15_bootcamp_project/view/main_screen/main_screen.dart';
 import 'package:f15_bootcamp_project/view/messaging_page/conversation_screen.dart';
-import 'package:f15_bootcamp_project/view/y_register_screen/register_screen.dart';
+import 'package:f15_bootcamp_project/view/register_screen/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/colors.dart';
+import '../page_view/app.dart';
 import 'components/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -74,7 +77,9 @@ class LoginScreen extends StatelessWidget {
                         .signIn(authController.loginEmail.value,
                             authController.loginPassword.value)
                         .whenComplete(() {
-                      Get.off(ConversationPage());
+                      _determinePosition();
+
+                      Get.off(App());
                     });
                   },
                   text: 'Giriş Yap',
@@ -147,4 +152,34 @@ class MyCustomButton extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<Position> _determinePosition() async {
+  bool serviceEnabled;
+  LocationPermission permission;
+
+  serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  if (!serviceEnabled) {
+    return Future.error('Location services are disabled.');
+  }
+
+  permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      return Future.error('Location permissions are denied');
+    }
+  }
+
+  if (permission == LocationPermission.deniedForever) {
+    return Future.error(
+        'Location permissions are permanently denied, we cannot request permissions.');
+  }
+  Position? position = await Geolocator.getCurrentPosition(
+    desiredAccuracy: LocationAccuracy.high,
+  );
+  feedController.lat.value = position.latitude;
+  feedController.longitude.value = position.longitude;
+
+  return await Geolocator.getCurrentPosition();
 }
